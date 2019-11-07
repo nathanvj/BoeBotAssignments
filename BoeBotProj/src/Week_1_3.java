@@ -1,25 +1,30 @@
-import TI.BoeBot;
-import TI.Timer;
+import TI.*;
 
 public class Week_1_3 {
 
     public static void main(String[] args) {
 
-        Timer timer = new Timer(1000);
-
-        timer.mark();
+        boolean state = false;
 
         while (true)
         {
             if (!BoeBot.digitalRead(10)) {
-                if(timer.timeout()) {
-                    BoeBot.digitalWrite(7, !BoeBot.digitalRead(7));
-                    BoeBot.wait(998);
+                BoeBot.digitalWrite(2, false);
+                state = !state;
+
+                if (state) {
+                    BoeBot.digitalWrite(7, true);
+                    BoeBot.wait(1300);
+                }
+                else {
+                    BoeBot.digitalWrite(7, false);
+                    BoeBot.wait(700);
                 }
             }
             else
             {
                 BoeBot.digitalWrite(7, false);
+                BoeBot.digitalWrite(2, true);
             }
 
         }
