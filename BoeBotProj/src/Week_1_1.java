@@ -7,9 +7,9 @@ public class Week_1_1 {
         while (true) {
 
             BoeBot.digitalWrite(8, true);
-            BoeBot.wait( 1000);
+            BoeBot.wait( 100);
             BoeBot.digitalWrite(8,false);
-            BoeBot.wait(2000);
+            BoeBot.wait(100);
         }
     }
 }
