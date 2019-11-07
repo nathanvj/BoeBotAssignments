@@ -5,15 +5,23 @@ public class Week_1_3 {
 
     public static void main(String[] args) {
 
-        while (true) {
+        Timer timer = new Timer(1000);
 
+        timer.mark();
+
+        while (true)
+        {
             if (!BoeBot.digitalRead(10)) {
-                BoeBot.digitalWrite(7, true);
-
+                if(timer.timeout()) {
+                    BoeBot.digitalWrite(7, !BoeBot.digitalRead(7));
+                    BoeBot.wait(998);
+                }
             }
-            else {
+            else
+            {
                 BoeBot.digitalWrite(7, false);
             }
+
         }
     }
 }
