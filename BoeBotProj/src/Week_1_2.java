@@ -10,6 +10,9 @@ public class Week_1_2 {
 
         t1.mark();
         t2.mark();
+
+        BoeBot.digitalWrite(8, true);
+        BoeBot.digitalWrite (13, false);
         while (true) {
 
             if (t1.timeout()) {
