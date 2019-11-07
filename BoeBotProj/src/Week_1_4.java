@@ -13,7 +13,11 @@ public class Week_1_4 {
             if (!BoeBot.digitalRead(10)) {
                 if (t1.timeout()) {
                     BoeBot.digitalWrite(7, !BoeBot.digitalRead(7));
-                    BoeBot.wait(998);
+                    t2.mark();
+                }
+                if (t2.timeout()) {
+                    BoeBot.digitalWrite(7, !BoeBot.digitalRead(7));
+                    t1.mark();
                 }
             }
             else {
