@@ -5,8 +5,8 @@ public class Week_1_2 {
 
     public static void main(String[] args) {
 
-        Timer t1 = new Timer(1000);
-        Timer t2 = new Timer(500);
+        Timer t1 = new Timer(1300);
+        Timer t2 = new Timer(700);
 
         t1.mark();
         t2.mark();
