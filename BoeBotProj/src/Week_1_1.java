@@ -9,7 +9,7 @@ public class Week_1_1 {
             BoeBot.digitalWrite(8, true);
             BoeBot.wait( 1000);
             BoeBot.digitalWrite(8,false);
-            BoeBot.wait(1000);
+            BoeBot.wait(2000);
         }
     }
 }
