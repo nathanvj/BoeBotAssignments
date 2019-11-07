@@ -7,8 +7,9 @@ public class Week_1_3 {
 
         while (true) {
 
-            if (BoeBot.digitalRead(13)) {
+            if (!BoeBot.digitalRead(10)) {
                 BoeBot.digitalWrite(7, true);
+
             }
             else {
                 BoeBot.digitalWrite(7, false);
