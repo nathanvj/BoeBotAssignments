@@ -1,6 +1,6 @@
 # BoeBotOpdrachten
 Opdracht voor Hardware Interfacing met de BoeBot.
 
-Gemaakt door:
-Jonathan van Waardenburg
+Gemaakt door:<br/>
+Jonathan van Waardenburg<br/>
 Nathan van Jole
