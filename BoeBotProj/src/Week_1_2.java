@@ -6,13 +6,13 @@ public class Week_1_2 {
     public static void main(String[] args) {
 
         Timer t1 = new Timer(1000);
-        Timer t2 = new Timer(1000);
+        Timer t2 = new Timer(500);
 
         t1.mark();
         t2.mark();
 
-        BoeBot.digitalWrite(8, true);
-        BoeBot.digitalWrite (13, false);
+        BoeBot.digitalWrite(8, false);
+        BoeBot.digitalWrite(13, false);
         while (true) {
 
             if (t1.timeout()) {
