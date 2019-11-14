@@ -10,26 +10,6 @@ public class Week_2_3 {
 
         while(true) {
 
-            BoeBot.digitalWrite(redPin, false);
-            BoeBot.digitalWrite(greenPin, false);
-            BoeBot.digitalWrite(bluePin, false);
-            BoeBot.wait(1000);
-
-            BoeBot.digitalWrite(redPin, true);
-            BoeBot.digitalWrite(greenPin, false);
-            BoeBot.digitalWrite(bluePin, false);
-            BoeBot.wait(1000);
-
-            BoeBot.digitalWrite(redPin, false);
-            BoeBot.digitalWrite(greenPin, true);
-            BoeBot.digitalWrite(bluePin, false);
-            BoeBot.wait(1000);
-
-            BoeBot.digitalWrite(redPin, false);
-            BoeBot.digitalWrite(greenPin, false);
-            BoeBot.digitalWrite(bluePin, true);
-            BoeBot.wait(1000);
-
             BoeBot.digitalWrite(redPin, true);
             BoeBot.digitalWrite(greenPin, true);
             BoeBot.digitalWrite(bluePin, false);
@@ -45,11 +25,11 @@ public class Week_2_3 {
             BoeBot.digitalWrite(bluePin, true);
             BoeBot.wait(1000);
 
-            BoeBot.digitalWrite(redPin, true);
+            /*BoeBot.digitalWrite(redPin, true);
             BoeBot.digitalWrite(greenPin, true);
             BoeBot.digitalWrite(bluePin, true);
             BoeBot.wait(1000);
-            
+            */
         }
     }
 }
