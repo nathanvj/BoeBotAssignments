@@ -12,10 +12,9 @@ public class Week_2_5 {
         s1.update(1500);
         s2.update(1500);
 
-        turn(10);
-        BoeBot.wait(5000);
-        turn(-10);
-        BoeBot.wait(5000);
+        BoeBot.wait(10000);
+        turnDegrees(360, 20);
+        turnDegrees(360, 80);
         emergencyBreak();
         while(true) {
 
@@ -85,5 +84,14 @@ public class Week_2_5 {
             s2.update(1500 + speed);
         }
         currentTurnSpeed = speed;
+    }
+    
+
+    public static void turnDegrees(int degrees, int turnSpeed) {
+        double time = degrees / turnSpeed / 2.229;
+        turn(turnSpeed);
+        time *= 1000;
+        int timeInt = (int) Math.round(time);
+        BoeBot.wait(timeInt);
     }
 }
