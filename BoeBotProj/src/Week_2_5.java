@@ -13,7 +13,7 @@ public class Week_2_5 {
         s2.update(1500);
 
         BoeBot.wait(10000);
-        doCircle();
+        doTriangle();
 
         while(true) {
 
@@ -122,5 +122,14 @@ public class Week_2_5 {
         s2.update(1600);
         BoeBot.wait(10000);
         emergencyBreak();
+    }
+
+    public static void doTriangle() {
+        for (int i = 0; i < 3; i++) {
+            goToSpeed(40);
+            BoeBot.wait(3000);
+            emergencyBreak();
+            turnDegrees(120, 40);
+        }
     }
 }
