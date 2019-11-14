@@ -13,9 +13,8 @@ public class Week_2_5 {
         s2.update(1500);
 
         BoeBot.wait(10000);
-        turnDegrees(360, 20);
-        turnDegrees(360, 80);
-        emergencyBreak();
+        doCircle();
+
         while(true) {
 
         }
@@ -40,7 +39,7 @@ public class Week_2_5 {
                 s2Speed++;
                 s1.update(s1Speed);
                 s2.update(s2Speed);
-                BoeBot.wait(100);
+                BoeBot.wait(20);
                 currentSpeed++;
             }
         }
@@ -54,7 +53,7 @@ public class Week_2_5 {
                 s2Speed--;
                 s1.update(s1Speed);
                 s2.update(s2Speed);
-                BoeBot.wait(100);
+                BoeBot.wait(20);
                 currentSpeed--;
             }
         }
@@ -83,15 +82,50 @@ public class Week_2_5 {
             s1.update(1500 + speed);
             s2.update(1500 + speed);
         }
-        currentTurnSpeed = speed;
+        currentTurnSpeed = 0;
     }
-    
+
 
     public static void turnDegrees(int degrees, int turnSpeed) {
-        double time = degrees / turnSpeed / 2.229;
+        double time = (double) degrees / (double) turnSpeed / 2.28;
         turn(turnSpeed);
         time *= 1000;
         int timeInt = (int) Math.round(time);
         BoeBot.wait(timeInt);
+        s1.update(1500);
+        s2.update(1500);
+    }
+
+    public static void doSquare() {
+        goToSpeed(40);
+        BoeBot.wait(3000);
+        emergencyBreak();
+        turnDegrees(90, 20);
+        goToSpeed(40);
+        BoeBot.wait(3000);
+        emergencyBreak();
+        turnDegrees(90, 20);
+        goToSpeed(40);
+        BoeBot.wait(3000);
+        emergencyBreak();
+        turnDegrees(90, 20);
+        goToSpeed(40);
+        BoeBot.wait(3000);
+        emergencyBreak();
+        turnDegrees(90, 20);
+    }
+
+    public static void doCircle() {
+
+        /*for (int i = 0; i < 36; i++) {
+            s1.update(1430);
+            s2.update(1570);
+            BoeBot.wait(100);
+            turnDegrees(10, 60);
+        }*/
+        s1.update(1440);
+        s2.update(1600);
+        BoeBot.wait(10000);
+        emergencyBreak();
     }
 }
