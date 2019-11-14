@@ -19,7 +19,7 @@ public class Week_2_5 {
         BoeBot.wait(5000);
         goToSpeed(-222);
         System.out.println("stoop");
-        goToSpeed(0);
+        emergencyBreak();
         while(true) {
 
         }
@@ -44,7 +44,7 @@ public class Week_2_5 {
                 s2Speed++;
                 s1.update(s1Speed);
                 s2.update(s2Speed);
-                BoeBot.wait(20);
+                BoeBot.wait(100);
                 currentSpeed++;
             }
         }
@@ -58,9 +58,14 @@ public class Week_2_5 {
                 s2Speed--;
                 s1.update(s1Speed);
                 s2.update(s2Speed);
-                BoeBot.wait(20);
+                BoeBot.wait(100);
                 currentSpeed--;
             }
         }
+    }
+
+    public static void emergencyBreak() {
+        s1.update(1500);
+        s2.update(1500);
     }
 }
