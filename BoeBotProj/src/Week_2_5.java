@@ -5,20 +5,17 @@ public class Week_2_5 {
     static Servo s1 = new Servo(12);
     static Servo s2 = new Servo(13);
     static int currentSpeed = 0;
+    static int currentTurnSpeed = 0;
 
     public static void main(String[] args) {
 
         s1.update(1500);
         s2.update(1500);
 
-        System.out.println("Going forward");
-        goToSpeed(20);
+        turn(10);
         BoeBot.wait(5000);
-        System.out.println("Going backwards");
-        goToSpeed(-20);
+        turn(-10);
         BoeBot.wait(5000);
-        goToSpeed(-222);
-        System.out.println("stoop");
         emergencyBreak();
         while(true) {
 
@@ -65,7 +62,28 @@ public class Week_2_5 {
     }
 
     public static void emergencyBreak() {
+        System.out.println("Stop!");
         s1.update(1500);
         s2.update(1500);
+        currentSpeed = 0;
+    }
+
+    public static void turn(int speed) {
+        if (speed < -200 || speed > 200) {
+            System.out.println("Invalid input");
+            return;
+        }
+        if (speed == currentTurnSpeed) {
+            return;
+        }
+        if (speed > 0) {
+            s1.update(1500+speed);
+            s2.update(1500+speed);
+        }
+        if (speed < 0) {
+            s1.update(1500 + speed);
+            s2.update(1500 + speed);
+        }
+        currentTurnSpeed = speed;
     }
 }
