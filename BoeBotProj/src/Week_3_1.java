@@ -16,7 +16,7 @@ public class Week_3_1 {
         while(true)
         {
             readIRSignal(lengtes);
-            BoeBot.wait(1);
+            BoeBot.wait(10);
 
             switch(currentBtn)
             {
@@ -67,7 +67,7 @@ public class Week_3_1 {
                     BoeBot.wait(10);
             }
             currentBtn = 0;
-            BoeBot.wait(1);
+            BoeBot.wait(10);
         }
 
     }
