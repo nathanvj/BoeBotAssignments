@@ -35,7 +35,6 @@ public class Week_3_1 {
                 case 4:
                     servo1.update(1500 - (50 * speed));
                     servo2.update(1500 - (50 * speed));
-                    currentBtn = 0;
                     break;
                 case 5:
                     servo1.update(1500);
