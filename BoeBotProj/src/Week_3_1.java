@@ -21,13 +21,16 @@ public class Week_3_1 {
             switch(currentBtn)
             {
                 case 1:
+                    servo1.update(1500 - (50 * speed));
+                    servo2.update(1500 + (20 * speed));
                     break;
                 case 2:
                     servo1.update(1500 - (50 * speed));
                     servo2.update(1500 + (50 * speed));
-                    currentBtn = 0;
                     break;
                 case 3:
+                    servo1.update(1500 - (20 * speed));
+                    servo2.update(1500 + (50 * speed));
                     break;
                 case 4:
                     servo1.update(1500 - (50 * speed));
@@ -37,25 +40,33 @@ public class Week_3_1 {
                 case 5:
                     servo1.update(1500);
                     servo2.update(1500);
-                    currentBtn = 0;
                     break;
                 case 6:
                     servo1.update(1500 + (50 * speed));
                     servo2.update(1500 + (50 * speed));
-                    currentBtn = 0;
                     break;
                 case 7:
+                    servo1.update(1500 + (50 * speed));
+                    servo2.update(1500 - (20 * speed));
                     break;
                 case 8:
                     servo1.update(1500 + (50 * speed));
                     servo2.update(1500 - (50 * speed));
-                    currentBtn = 0;
                     break;
                 case 9:
+                    servo1.update(1500 + (20 * speed));
+                    servo2.update(1500 - (50 * speed));
                     break;
-                default :
+                case 19:
+                    if(speed < 5) speed++;
+                    break;
+                case 20:
+                    if(speed > 1) speed--;
+                    break;
+                default:
                     BoeBot.wait(10);
             }
+            currentBtn = 0;
             BoeBot.wait(1);
         }
 
