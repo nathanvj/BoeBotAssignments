@@ -2,8 +2,12 @@ import TI.*;
 
 public class Week_3_1 {
 
+    private static Servo servo1 = new Servo(12);
+    private static Servo servo2 = new Servo(13);
 
+    private static int speed = 2;
     private static int currentBtn;
+
     public static void main(String[] args)
     {
         System.out.println("luisteren");
@@ -12,6 +16,39 @@ public class Week_3_1 {
         while(true)
         {
             readIRSignal(lengtes);
+
+            switch(currentBtn)
+            {
+                case 1:
+
+                    break;
+                case 2:
+                    servo1.update(1500 - (50 * speed));
+                    servo2.update(1500 + (50 * speed));
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    servo1.update(1500 - (50 * speed));
+                    servo2.update(1500 - (50 * speed));
+                    break;
+                case 5:
+                    servo1.update(1500);
+                    servo2.update(1500);
+                    break;
+                case 6:
+                    servo1.update(1500 + (50 * speed));
+                    servo2.update(1500 + (50 * speed));
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    servo1.update(1500 + (50 * speed));
+                    servo2.update(1500 - (50 * speed));
+                    break;
+                case 9:
+                    break;
+            }
             BoeBot.wait(10);
         }
 
