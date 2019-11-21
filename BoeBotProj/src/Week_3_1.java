@@ -17,6 +17,10 @@ public class Week_3_1 {
 
     }
 
+    /**
+     * Reads IR signal to databits in int array
+     * @param lengtes The array that gets filled with databits
+     */
     public static void readIRSignal(int[] lengtes)
     {
         int pulseLength = BoeBot.pulseIn(0, false, 6000);
