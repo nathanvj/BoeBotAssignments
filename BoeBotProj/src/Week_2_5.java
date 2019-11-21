@@ -13,7 +13,9 @@ public class Week_2_5 {
         s2.update(1500);
 
         BoeBot.wait(10000);
-        doTriangle();
+        turnDegrees(360, 40);
+        emergencyBreak();
+
 
         while(true) {
 
@@ -87,10 +89,11 @@ public class Week_2_5 {
 
 
     public static void turnDegrees(int degrees, int turnSpeed) {
-        double time = (double) degrees / (double) turnSpeed / 2.28;
+        double time = (double) degrees / (double) turnSpeed / 2.4;
         turn(turnSpeed);
         time *= 1000;
-        int timeInt = (int) Math.round(time);
+        double timeDouble = Math.round(time);
+        int timeInt = (int) timeDouble;
         BoeBot.wait(timeInt);
         s1.update(1500);
         s2.update(1500);
