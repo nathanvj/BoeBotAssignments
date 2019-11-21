@@ -16,40 +16,47 @@ public class Week_3_1 {
         while(true)
         {
             readIRSignal(lengtes);
+            BoeBot.wait(1);
 
             switch(currentBtn)
             {
                 case 1:
-
                     break;
                 case 2:
                     servo1.update(1500 - (50 * speed));
                     servo2.update(1500 + (50 * speed));
+                    currentBtn = 0;
                     break;
                 case 3:
                     break;
                 case 4:
                     servo1.update(1500 - (50 * speed));
                     servo2.update(1500 - (50 * speed));
+                    currentBtn = 0;
                     break;
                 case 5:
                     servo1.update(1500);
                     servo2.update(1500);
+                    currentBtn = 0;
                     break;
                 case 6:
                     servo1.update(1500 + (50 * speed));
                     servo2.update(1500 + (50 * speed));
+                    currentBtn = 0;
                     break;
                 case 7:
                     break;
                 case 8:
                     servo1.update(1500 + (50 * speed));
                     servo2.update(1500 - (50 * speed));
+                    currentBtn = 0;
                     break;
                 case 9:
                     break;
+                default :
+                    BoeBot.wait(10);
             }
-            BoeBot.wait(10);
+            BoeBot.wait(1);
         }
 
     }
@@ -68,9 +75,10 @@ public class Week_3_1 {
                 lengtes[i] = BoeBot.pulseIn(0, false, 20000);
 
             /*for(int i=0 ; i<12 ; i++)
-                System.out.println(lengtes[i] + ", ");*/
-            System.out.println("");
+                System.out.println(lengtes[i] + ", ");
+            System.out.println("");*/
             currentBtn = getNumber(lengtes);
+            //System.out.println(getNumber(lengtes));
         }
     }
 
@@ -91,9 +99,6 @@ public class Week_3_1 {
         total+=1;
         if (total == 10) {
             return 0;
-        }
-        if (total > 10) {
-            return -1;
         }
         return total;
     }
