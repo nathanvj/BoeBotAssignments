@@ -4,8 +4,8 @@ public class Week_4_2 {
 
     static int speed = 200;
 
-    static Servo s1 = new Servo(12);
-    static Servo s2 = new Servo(13);
+    static Servo leftServo = new Servo(12);
+    static Servo rightServo = new Servo(13);
 
     static int middleLineSensorValue;
     static int leftLineSensorValue;
@@ -13,8 +13,6 @@ public class Week_4_2 {
 
     public static void main(String[] args) {
 
-        s1.update(1700);
-        return;
 
         System.out.println("Spoorzoeken...");
         while(true) {
@@ -32,13 +30,13 @@ public class Week_4_2 {
              */
             if(middleLineSensorValue >= 200 && leftLineSensorValue < 200 && rightLineSensorValue < 200)
             {
-                s1.update(1500 + speed);
-                s2.update(1500 - speed);
+                leftServo.update(1500 + speed);
+                rightServo.update(1500 - speed);
             }
             else if(leftLineSensorValue >= 200 && middleLineSensorValue < 200 && rightLineSensorValue < 200)
             {
-                s1.update(1500 - speed);
-                s2.update(1500 + speed);
+                leftServo.update(1500 - speed);
+                rightServo.update(1500 + speed);
             }
             else if(rightLineSensorValue >= 200 && middleLineSensorValue < 200 && leftLineSensorValue < 200)
             {
