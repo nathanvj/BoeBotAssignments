@@ -49,10 +49,12 @@ public class Week_4_2 {
             }
             else if(rightLineSensorValue >= 200 && middleLineSensorValue >= 200 && leftLineSensorValue < 200)
             {
+                Week_2_5.emergencyBreak();
                 // draai 90
             }
             else if(rightLineSensorValue >= 200 && middleLineSensorValue >= 200 && leftLineSensorValue >= 200)
             {
+                Week_2_5.emergencyBreak();
                 // kruising doe iets
             }
 
