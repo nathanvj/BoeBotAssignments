@@ -17,6 +17,10 @@ public class Week_4_2 {
             leftLineSensorValue = BoeBot.analogRead(1);
             rightLineSensorValue = BoeBot.analogRead(2);
 
+            System.out.print(leftLineSensorValue);
+            System.out.print(" middle: "+middleLineSensorValue);
+            System.out.print(" right: "+rightLineSensorValue);
+            System.out.println();
             /*
             Als alleen midden hoog -> blijven rijden
             Als alleen links hoog -> stuur naar links bij
@@ -25,40 +29,45 @@ public class Week_4_2 {
             Als rechts midden hoog -> draai 90 graden
             Als midden, links en rechts hoog -> kruising
              */
+            BoeBot.wait(50);
             if(middleLineSensorValue >= 200 && leftLineSensorValue < 200 && rightLineSensorValue < 200)
             {
-                leftServo.update(1530);
-                rightServo.update(1470);
+                leftServo.update(1540);
+                rightServo.update(1460);
             }
-            else if(leftLineSensorValue >= 200 && middleLineSensorValue < 200 && rightLineSensorValue < 200)
+            else if(leftLineSensorValue >= 200 && middleLineSensorValue < 200 && rightLineSensorValue < 400)
             {
                 // stuur links
                 int rightPulseWidth = rightServo.getPulseWidth();
-                rightServo.update(1450);
+                leftServo.update(1600);
             }
-            else if(rightLineSensorValue >= 200 && middleLineSensorValue < 200 && leftLineSensorValue < 200)
+            else if(rightLineSensorValue >= 400 && middleLineSensorValue < 400 && leftLineSensorValue < 400)
             {
                 // stuur naar rechts bij
                 int leftPulseWidth = leftServo.getPulseWidth();
-                leftServo.update(1550);
+                rightServo.update(1400);
             }
-            else if(leftLineSensorValue >= 200 && middleLineSensorValue >= 200 && rightLineSensorValue < 200)
+            else if(leftLineSensorValue >= 400 && middleLineSensorValue >= 400 && rightLineSensorValue < 400)
             {
-                Week_2_5.emergencyBreak();
+                rightServo.update(1500);
+                leftServo.update(1650);
+                BoeBot.wait(500);
                 // draai -90
             }
-            else if(rightLineSensorValue >= 200 && middleLineSensorValue >= 200 && leftLineSensorValue < 200)
+            else if(rightLineSensorValue >= 400 && middleLineSensorValue >= 400 && leftLineSensorValue < 400)
             {
-                Week_2_5.emergencyBreak();
+                leftServo.update(1500);
+                rightServo.update(1350);
+                BoeBot.wait(500);
                 // draai 90
             }
-            else if(rightLineSensorValue >= 200 && middleLineSensorValue >= 200 && leftLineSensorValue >= 200)
+            else if(rightLineSensorValue >= 400 && middleLineSensorValue >= 400 && leftLineSensorValue >= 400)
             {
                 Week_2_5.emergencyBreak();
                 // kruising doe iets
             }
 
-            BoeBot.wait(10);
+            BoeBot.wait(50);
         }
     }
 
